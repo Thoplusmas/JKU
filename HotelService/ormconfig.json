@@ -1,0 +1,20 @@
+{
+   "type": "mysql",
+   "host": "localhost",
+   "username": "hotel",
+   "password": "RWE85XZ!4ueWxgg",
+   "database": "hotel",
+   "port": "3306",
+   "entities": ["../**/*.entity.ts"],
+   "extra": {
+      "charset": "utf8mb4_unicode_ci"
+   },
+   "migrations": ["src/migration/**/*.ts"],
+   "cli": {
+      "entitiesDir": "dist/src/entity",
+      "migrationsDir": "src/migration"
+   },
+   "logging": true,
+   "synchronize": true
+
+}
