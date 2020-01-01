@@ -1,10 +1,11 @@
 import { Controller, Get, Body, Post } from '@nestjs/common';
 import { CreateRoomDto } from './dto/create-room.dto';
 import { RoomService } from './room.service';
-import { ApiCreatedResponse, ApiBadRequestResponse, ApiImplicitBody } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiBadRequestResponse, ApiImplicitBody, ApiUseTags } from '@nestjs/swagger';
 import { Room } from './room.entity';
 
 @Controller('room')
+@ApiUseTags('room')
 export class RoomController {
     constructor(private readonly roomService: RoomService) { }
 

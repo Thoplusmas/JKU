@@ -1,7 +1,9 @@
-import { ApiModelProperty } from '@nestjs/swagger';
+import { ApiModelProperty, ApiUseTags } from '@nestjs/swagger';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
+@ApiUseTags('room')
+
 export class Room {
 
     @PrimaryGeneratedColumn()
