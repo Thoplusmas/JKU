@@ -1,4 +1,4 @@
-import { Controller, Get, Body, Post } from '@nestjs/common';
+import { Controller, Get, Body, Post, Param } from '@nestjs/common';
 import { CreateRoomDto } from './dto/create-room.dto';
 import { RoomService } from './room.service';
 import { ApiCreatedResponse, ApiBadRequestResponse, ApiImplicitBody, ApiUseTags } from '@nestjs/swagger';
@@ -15,4 +15,15 @@ export class RoomController {
     public async create(@Body() createRoomDto: CreateRoomDto): Promise<Room> {
         return this.roomService.create(createRoomDto);
     }
+
+    @Get()
+    public async getAll(): Promise<Array<Room>> {
+        return this.roomService.getAll();
+    }
+
+    @Get(':id')
+    public async getOne(@Param('id')id): Promise<Room> {
+        return this.roomService.getOne(id);
+    }
+
 }

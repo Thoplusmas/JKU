@@ -15,4 +15,12 @@ export class RoomService {
     public async create(createRoomDto: CreateRoomDto): Promise<Room> {
         return await this.roomRepository.save(createRoomDto);
     }
+
+    public async getAll(): Promise<Array<Room>> {
+        return this.roomRepository.find();
+    }
+
+    public async getOne(id): Promise<Room> {
+        return this.roomRepository.findOne(id);
+    }
 }
