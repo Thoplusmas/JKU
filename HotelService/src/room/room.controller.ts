@@ -28,7 +28,7 @@ export class RoomController {
     @ApiNoContentResponse({ description: 'Given ID not in database' })
     @ApiBadRequestResponse({ description: 'Bad Request: E.G If some invalid parameters were added or missing' })
     @ApiImplicitParam({name:'id', type:'number'})
-    public async getOne(@Param('id')id): Promise<Room> {
+    public async getOne(@Param('id') id): Promise<Room> {
         return this.roomService.getOne(id);
     } 
 }

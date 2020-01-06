@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Repository } from 'typeorm';
+import { Repository, DeleteResult } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateBookingDto } from './dto/create-booking.dto';
 import { Booking } from './booking.entity';
@@ -14,5 +14,9 @@ export class BookingService {
 
     public async createBooking(createBookingDto: CreateBookingDto): Promise<Booking> {
         return await this.bookingRepository.save(createBookingDto);
+    }
+
+    public deleteBooking(id: number): Promise<DeleteResult> {
+        return this.bookingRepository.delete(id);
     }
 }
