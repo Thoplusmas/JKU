@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConfiguratorComponent } from './configurator/configurator.component';
+import { HotelServiceComponent } from './hotel-service/hotel-service.service';
 
 const routes: Routes = [{
   path: '',
@@ -16,6 +17,10 @@ const routes: Routes = [{
     {
       path: 'configurator',
       component: ConfiguratorComponent,
+    },
+    {
+      path: 'hotel-service',
+      component: HotelServiceComponent,
     },
     {
       path: '',

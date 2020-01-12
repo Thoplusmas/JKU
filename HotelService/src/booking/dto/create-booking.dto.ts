@@ -5,6 +5,11 @@ import { Room } from '../../room/room.entity';
 export class CreateBookingDto {
 
     @IsNotEmpty()
+    @ApiModelProperty({
+        description: 'Id of the room to book',
+        required: true,
+        nullable: false,
+    })
     public roomId: number;
 
     @IsNotEmpty()

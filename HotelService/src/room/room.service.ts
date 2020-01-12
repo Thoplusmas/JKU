@@ -16,7 +16,7 @@ export class RoomService {
         return await this.roomRepository.save(createRoomDto);
     }
 
-    public async getAll(): Promise<Array<Room>> {
+    public async getAll(): Promise<Room[]> {
         return this.roomRepository.find();
     }
 

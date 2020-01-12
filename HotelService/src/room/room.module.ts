@@ -10,5 +10,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     ],
     controllers: [RoomController],
     providers: [RoomService],
+    exports: [RoomService],
 })
 export class RoomModule { }

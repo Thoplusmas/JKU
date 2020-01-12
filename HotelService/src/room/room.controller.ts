@@ -17,9 +17,9 @@ export class RoomController {
     }
 
     @Get()
-    @ApiOkResponse({ type: Array(Room), isArray:true,  description: 'Returns all rooms' })
+    @ApiOkResponse({ type: Array(Room), isArray: true, description: 'Returns all rooms' })
     @ApiNoContentResponse({ description: 'No rooms in database' })
-    public async getAll(): Promise<Array<Room>> {
+    public async getAll(): Promise<Room[]> {
         return this.roomService.getAll();
     }
 
@@ -27,8 +27,8 @@ export class RoomController {
     @ApiOkResponse({ type: Room, description: 'Returns the room with the given ID' })
     @ApiNoContentResponse({ description: 'Given ID not in database' })
     @ApiBadRequestResponse({ description: 'Bad Request: E.G If some invalid parameters were added or missing' })
-    @ApiImplicitParam({name:'id', type:'number'})
+    @ApiImplicitParam({ name: 'id', type: 'number' })
     public async getOne(@Param('id') id): Promise<Room> {
         return this.roomService.getOne(id);
-    } 
+    }
 }

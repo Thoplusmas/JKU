@@ -1,0 +1,42 @@
+  <div class="row" widht="100%">
+    <nb-card>
+      <nb-card-header>
+        Alle verfügbaren Hotelzimmer
+      </nb-card-header>
+      <nb-card-body>
+        <div>
+          <form #raumauswahlForm="ngForm" (ngSubmit)="submitRaumauswahl($event)">
+            <select required [(ngModel)]="raumauswahlForm.room" name="room">
+              <option *ngFor="let room of allRooms" [value]="room.id">{{room.description}}</option>
+            </select>
+            <br><br><label> An- und Abreisedatum wählen</label>
+
+            <!-- Calendar einbinden-->
+            <nb-calendar-range boundingMonth="false" startView="date" size="medium" [(range)]="selectedDateRange">
+            </nb-calendar-range>
+            <br><button type="submit" class="btn btn-success" [disabled]="!raumauswahlForm.form.valid">Buchen</button>
+          </form>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="row" widht="100%">
+
+    <nb-card>
+      <nb-card-header>
+        Buchungen
+      </nb-card-header>
+      <nb-card-body>
+        <div>
+          <ul>
+            <li *ngFor="let booking of allBookings">
+              <span class="badge">{{booking.id}}</span>
+              <span> From: {{booking.from}}</span>
+              <span> To: {{booking.to}}</span>
+              <span> RoomId: {{booking.room.id}}</span>
+              <button type="submit" class="btn btn-warning" (click)="deleteBooking(booking)">Buchung löschen</button>
+            </li>
+          </ul>
+        </div>
+      </nb-card-body>
+    </nb-card>
