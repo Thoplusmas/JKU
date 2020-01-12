@@ -4,6 +4,7 @@ import { NbCardModule, NbStepperModule, NbInputModule, NbListModule, NbTreeGridM
 import { ThemeModule } from '../../@theme/theme.module';
 import { HotelServiceComponent } from './hotel-service.service';
 import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     NbListModule,
     NbCalendarModule,
     NbCalendarRangeModule,
+    MatSnackBarModule,
   ],
   declarations: [
     HotelServiceComponent,

@@ -4,6 +4,7 @@ import { ApiService } from '../../services/api.service';
 import { NbCalendarRange } from '@nebular/theme';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Room } from './models/room.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class HotelServiceComponent {
 
   public selectedDateRange: NbCalendarRange<Date>;
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private _snackBar: MatSnackBar) {
     this.getAllRooms();
     this.getBookings();
 
@@ -30,22 +31,30 @@ export class HotelServiceComponent {
 
   public getAllRooms(): void {
     this.apiService.get('http://localhost:3000/room').subscribe(
-      (allRooms: Array<Room>) => this.allRooms = allRooms,
+      (allRooms: Array<Room>) => {
+        this.allRooms = allRooms;
+        console.log(this.allRooms)
+      }
+      ,
       (error: HttpErrorResponse) => console.log(error),
     );
   }
 
   public submitRaumauswahl(): void {
     console.log("selected range: ", this.selectedDateRange);
-    console.log("selected room id: ", this.raumauswahlForm.value);
-    this.selectedRoom = this.raumauswahlForm.value;
+    console.log("selected room id: ", this.raumauswahlForm.form.value.room);
+    this.selectedRoom = this.raumauswahlForm.form.value.room;
     this.apiService.post('http://localhost:3000/booking', {
       roomId: this.selectedRoom,
       from: this.selectedDateRange.start,
       to: this.selectedDateRange.end,
     }).subscribe(
       (booking: any) => this.getBookings(),
-      (error: HttpErrorResponse) => console.log(error),
+      (error: HttpErrorResponse) => {
+        let snackBarRef = this._snackBar.open('Room already booked for this time period.', '', { duration: 3000 });
+
+        console.log(error)
+      },
     );
 
 
