@@ -16,7 +16,6 @@ export class BookingService {
     }
 
     public async createBooking(createBookingDto: CreateBookingDto): Promise<Booking> {
-        console.log(createBookingDto.roomId);
         const overlappingBookings = await this.bookingRepository.createQueryBuilder('booking')
             .andWhere('booking.roomId = :roomId', { roomId: createBookingDto.roomId })
             .andWhere('((:from <= booking.to) AND (booking.from <= :to))', { from: createBookingDto.from, to: createBookingDto.to })
