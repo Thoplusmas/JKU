@@ -87,7 +87,7 @@ export class ConfiguratorComponent {
     // This should usually be done in a service!
     this.apiService.post('http://localhost:3000/auth', createUserRequest).subscribe(
       (response: boolean) => {
-        this.stepper.next();
+        response ? this.stepper.next() : console.log("error from backend");
         console.log('created user succesfully: ', response);
       },
       (error) => console.log(error),

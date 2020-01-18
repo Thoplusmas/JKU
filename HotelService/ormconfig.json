@@ -1,11 +1,14 @@
 {
-   "type": "mysql",
-   "host": "localhost",
-   "username": "hotel",
-   "password": "RWE85XZ!4ueWxgg",
+   "type": "mssql",
+   "host": "hotelservicejku.database.windows.net",
+   "username": "roundtrip",
+   "password": "Password!",
    "database": "hotel",
-   "port": "3306",
-   "entities": ["../**/*.entity.ts"],
+   "options": {
+      "encrypt": true
+   },
+   "port": 1433,
+   "entities": ["build/**/*.entity{.ts,.js}"],
    "extra": {
       "charset": "utf8mb4_unicode_ci"
    },
