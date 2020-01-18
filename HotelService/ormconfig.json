@@ -1,7 +1,7 @@
 {
    "type": "mssql",
    "host": "hotelservicejku.database.windows.net",
-   "username": "roundtrip",
+   "username": "rountrip",
    "password": "Password!",
    "database": "hotel",
    "options": {
