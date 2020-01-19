@@ -30,7 +30,7 @@ export class HotelServiceComponent {
   }
 
   public getAllRooms(): void {
-    this.apiService.get('http://localhost:3000/room').subscribe(
+    this.apiService.get('https://hotelservicejku.azurewebsites.net/api/room').subscribe(
       (allRooms: Array<Room>) => {
         this.allRooms = allRooms;
         console.log(this.allRooms)
@@ -44,7 +44,7 @@ export class HotelServiceComponent {
     console.log("selected range: ", this.selectedDateRange);
     console.log("selected room id: ", this.raumauswahlForm.form.value.room);
     this.selectedRoom = this.raumauswahlForm.form.value.room;
-    this.apiService.post('http://localhost:3000/booking', {
+    this.apiService.post('https://hotelservicejku.azurewebsites.net/api/booking', {
       roomId: this.selectedRoom,
       from: this.selectedDateRange.start,
       to: this.selectedDateRange.end,
@@ -60,7 +60,7 @@ export class HotelServiceComponent {
 
   }
   public getBookings(): void {
-    this.apiService.get('http://localhost:3000/booking').subscribe(
+    this.apiService.get('https://hotelservicejku.azurewebsites.net/api/booking').subscribe(
       (allBookings: Array<any>) => this.allBookings = allBookings,
       (error: HttpErrorResponse) => console.log(error),
     );
@@ -68,7 +68,7 @@ export class HotelServiceComponent {
 
   public deleteBooking(booking: any) {
     console.log("deleting booking: ", booking.id);
-    this.apiService.delete('http://localhost:3000/booking/' + booking.id).subscribe(
+    this.apiService.delete('https://hotelservicejku.azurewebsites.net/api/booking/' + booking.id).subscribe(
       (response: boolean) => this.getBookings(),
       (error: HttpErrorResponse) => console.log(error),
     );
