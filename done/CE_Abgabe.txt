@@ -1,0 +1,9 @@
+Abgabe CE: https://github.com/Firetrip/JKU
+Florian Daniel und Moritz Witti
+
+Die Realisierung erfolgte mittels NestJS (ein NodeJS Framework), TypeOrm und Typescript im Backend (=CRM).
+Hierzu finden sich die Dateien im Ordner CRM, das Projekt kann mit npm install && npm run start gestartet werden. (NodeJS+NPM muss installiert sein).
+
+Das Frontend wurde mit Angular realisiert und findet sich im Ordner webserver. 
+Anm. : In diesem Frontend finden sich auch noch Umsetzungen aus anderen JKU-Aufgaben.
+Das Frontend kann mit ng serve gestartet werden (Angular muss installiert sein).
