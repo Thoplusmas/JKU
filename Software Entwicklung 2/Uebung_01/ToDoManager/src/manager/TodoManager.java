@@ -145,6 +145,27 @@ public class TodoManager {
     }
 
     /**
+     * Removes all entires until a certain date and returns number of deleted items
+     * 
+     * @param until all items to this date will be deleted
+     * @return number of deleted items
+     */
+    public int removeUnitl(LocalDate until) {
+        TodoListEntry entry = this.first;
+        int count = 0; // helper variable because we return number of removed items
+
+        while (entry != null && (((TodoEntry) entry.getData()).getDueTo().isBefore(until)
+                || ((TodoEntry) entry.getData()).getDueTo().isEqual(until))) {
+            entry.getNext().setPrevious(null); // set the previous of item after the deleted one to 0
+            this.first = entry.getNext(); // set a new first
+            count++;
+            entry = entry.getNext();
+
+        }
+        return count;
+    }
+
+    /**
      * Returns the last entry in the list
      * 
      * @return

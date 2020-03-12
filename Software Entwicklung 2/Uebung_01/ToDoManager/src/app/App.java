@@ -11,7 +11,7 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         TodoManager manager = new TodoManager();
-        In.open("todos.txt");
+        In.open("/Users/floriandaniel/Documents/JKU/Software Entwicklung 2/Uebung_01/ToDoManager/todos.txt");
         if (!In.done()) {
             Out.println("Cannot open file todos.txt");
             return;
@@ -74,6 +74,16 @@ public class App {
         Out.println("Still open until Until March 9:");
         Out.println("===============================");
         allEntries = manager.get(LocalDate.of(2020, 3, 9), Status.OPEN);
+        for (int i = 0; i < allEntries.length; i++) {
+            System.out.println(allEntries[i]);
+        }
+
+        manager.removeUnitl(LocalDate.of(2020, 3, 9));
+
+        Out.println();
+        Out.println("Remaining items after deletion until 2020-03-09");
+        Out.println("===============================");
+        allEntries = manager.get(null, null);
         for (int i = 0; i < allEntries.length; i++) {
             System.out.println(allEntries[i]);
         }
