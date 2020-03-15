@@ -64,7 +64,9 @@ public class Transporter {
 
     @Override()
     public String toString() {
-        return description;
+        return "Description: " + this.description + " | Max. weight: " + this.maximumWeight + " | Cost/KM: "
+                + this.costPerKM + " | Current Loc: " + this.currentLocation.toString() + " | Cargo: "
+                + this.cargo.toString();
     }
 
 }

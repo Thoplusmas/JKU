@@ -2,7 +2,7 @@ package exceptions;
 
 public class UnreachableLocationException extends TransportException {
 
-    public UnreachableLocationException(String msg) {
+    public UnreachableLocationException(final String msg) {
         super(msg);
     }
 }

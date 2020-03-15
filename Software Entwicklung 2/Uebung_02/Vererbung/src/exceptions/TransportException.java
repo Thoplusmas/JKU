@@ -2,7 +2,7 @@ package exceptions;
 
 public class TransportException extends Exception {
 
-    public TransportException(String msg) {
+    public TransportException(final String msg) {
         super(msg);
     }
 }

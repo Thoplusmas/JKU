@@ -2,7 +2,7 @@ package exceptions;
 
 public class OverloadedException extends CargoException {
 
-    public OverloadedException(String msg) {
+    public OverloadedException(final String msg) {
         super(msg);
     }
 }

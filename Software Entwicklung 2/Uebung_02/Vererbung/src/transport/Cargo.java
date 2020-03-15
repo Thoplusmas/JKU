@@ -2,10 +2,10 @@ package transport;
 
 public class Cargo {
     private final CargoType type;
-    private int weight;
-    private String description;
+    private final int weight;
+    private final String description;
 
-    public Cargo(CargoType type, String description, int weight) {
+    public Cargo(final CargoType type, final String description, final int weight) {
         this.type = type;
         this.weight = weight;
         this.description = description;
@@ -19,16 +19,10 @@ public class Cargo {
         return weight;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    @Override
+    public String toString() {
+        return String.format("%1$s with a weight of %2$d and description %3s", this.type, this.weight,
+                this.description);
     }
 
 }

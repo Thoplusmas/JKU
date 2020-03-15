@@ -2,7 +2,7 @@ package exceptions;
 
 public class CargoException extends TransportException {
 
-    public CargoException(String msg) {
+    public CargoException(final String msg) {
         super(msg);
     }
 }
