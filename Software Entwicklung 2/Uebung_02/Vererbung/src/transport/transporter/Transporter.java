@@ -47,8 +47,6 @@ public class Transporter {
             throw new OverloadedException("Loading this cargo is not allowed");
         }
         this.cargo = c;
-        // TODO: figure out if we should set the cargo here to, or if this would not
-        // make sens
     }
 
     /**
@@ -64,9 +62,12 @@ public class Transporter {
 
     @Override()
     public String toString() {
-        return "Description: " + this.description + " | Max. weight: " + this.maximumWeight + " | Cost/KM: "
-                + this.costPerKM + " | Current Loc: " + this.currentLocation.toString() + " | Cargo: "
-                + this.cargo.toString();
+        String msg = "Description: " + this.description + " | Max. weight: " + this.maximumWeight + " | Cost/KM: "
+                + this.costPerKM + " | Current Loc: " + this.currentLocation.toString();
+        if (this.cargo != null) {
+            msg += " | Cargo: " + this.cargo.toString();
+        }
+        return msg;
     }
 
 }
