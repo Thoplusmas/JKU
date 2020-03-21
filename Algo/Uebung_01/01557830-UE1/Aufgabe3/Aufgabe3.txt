@@ -1,0 +1,12 @@
+Ausgabe für Aufgabe 3:
+Fläche des Polgygons mit 3 Randpunkten: 0.5
+Fläche des Polgygons mit 4 Randpunkten: 1.0
+Fläche des Polgygons mit 8 Randpunkten: 7.0
+Fläche des Polgygons mit 12 Randpunkten: 18.0
+Fläche des Polgygons mit 10 Randpunkten: 14.0
+Fläche des Polgygons mit 6 Randpunkten: 6.0
+Fläche des Polgygons mit 6 Randpunkten: 8.0
+Polygon erfüllt die Kriterien nicht. (Zeile: 2)
+Fläche des Polgygons mit 4 Randpunkten: -1.0
+Polygon erfüllt die Kriterien nicht. (Zeile: 2)
+Fläche des Polgygons mit 4 Randpunkten: -1.0
