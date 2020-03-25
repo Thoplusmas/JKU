@@ -1,6 +1,6 @@
 package resources;
 
-public class Potion extends Resource {
+public class Potion extends Item {
 
     private Item[] items;
 
